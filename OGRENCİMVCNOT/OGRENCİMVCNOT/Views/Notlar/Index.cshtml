@@ -1,0 +1,41 @@
+﻿@using OGRENCİMVCNOT.Models.EntityFramework
+@model List<TBLNOTLAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>NOT</th>
+        <th>DERS</th>
+        <th>OGRENCI</th>
+        <th>SINAV1</th>
+        <th>SINAV2</th>
+        <th>SINAV3</th>
+        <th>PROJE</th>
+        <th>ORTLAMA</th>
+        <th>DURUM</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var snv in Model)
+        {
+            <tr>
+                <th>@snv.NOTID</th>
+                <th>@snv.DERSID</th>
+                <th>@snv.OGRID</th>
+                <th>@snv.SINAV1</th>
+                <th>@snv.SINAV2</th>
+                <th>@snv.SINAV3</th>
+                <th>@snv.PROJE</th>
+                <th>@snv.ORTALAMA</th>
+                <th>@snv.DURUM</th>
+                <th><a href="/Notlar/NotGetir/@snv.NOTID" class="btn btn-warning">Güncelle</a></th>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="/Notlar/YeniSinav" class="btn btn-primary">Yeni Sınav Girişi</a>

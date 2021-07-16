@@ -1,0 +1,43 @@
+﻿@model OGRENCİMVCNOT.Models.EntityFramework.TBLOGRENCILER
+@{
+    ViewBag.Title = "OgrenciGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Ogrencı", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.OGRAD)
+        @Html.TextBoxFor(m => m.OGRAD, new { @class = "form-control" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.OGSOYAD)
+        @Html.TextBoxFor(m => m.OGSOYAD, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OGRFOTOGRAF)
+        @Html.TextBoxFor(m => m.OGRFOTOGRAF, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OGRKULUP)
+        @Html.TextBoxFor(m => m.OGRKULUP, new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OGRCINSIYET)
+        @Html.TextBoxFor(m => m.OGRCINSIYET, new { @class = "form-control" })
+
+    </div>
+
+
+    @Html.HiddenFor(m => m.OGRENCIID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">GÜNCELLE</button>
+
+    </div>
+
+}
